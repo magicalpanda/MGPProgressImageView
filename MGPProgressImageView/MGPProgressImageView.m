@@ -40,7 +40,6 @@
     {
         CALayer *imageLayer = [CALayer layer];
         imageLayer.frame = self.bounds;
-        imageLayer.contents = (id)[image mgp_greyscaleImage].CGImage;
         imageLayer.contentsGravity = kCAGravityResizeAspect;
         imageLayer.backgroundColor = [UIColor clearColor].CGColor;
         imageLayer.opaque = YES;
@@ -56,6 +55,7 @@
 
         self.grayImageLayer = containerLayer;
     }
+    self.imageLayer.contents = (id)[image mgp_greyscaleImage].CGImage;
 }
 
 - (CGPoint) anchorPointForDirection:(MGPProgressImageViewDirection)direction;
